@@ -1,5 +1,4 @@
 #include <iostream>
-#include<string.h>
 using namespace std;
 bool mystrncmp(char *a, char *b);
 int main()
@@ -28,7 +27,7 @@ int main()
         num[j]++; //记录当前单词出现伪次数
         for (int cmp = 0; cmp < j; cmp++)
         {
-            if (mystrncmp(b[j], b[cmp]) == 0) //检验当前单词之前是否存在
+            if (mystrncmp(b[j], b[cmp]) == 1) //检验当前单词之前是否存在
             {
                 num[cmp]++;                              //若存在 记录该单词出现真次数
                 for (int clean = 0; clean < 31; clean++) //清理重复的单词位
@@ -51,18 +50,13 @@ out:
     cout << "total number of words is " << totalnum << "\nthe most frequent word is " << b[position] << "\nit appears " << max << " times";
     return 0;
 }
-
-/*
-
-
-
 bool mystrncmp(char *a, char *b){
     
     bool flag = 1;
-    for (int i = 0; i < 30; i++)
+    for (int i = 0; i < 50; i++)
     {
         if (*(a + i) != *(b + i))
             flag = 0;
     }
     return flag;
-}*/
+}

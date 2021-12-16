@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-void select1(int[], int);
+void select1(int *, int);
 void select2(int *, int);
 void insert1(int *, int);
 void insert2(int *, int);
-void out(int[], int);
+void out(int *, int);
 int main()
 {
     int a[10] = {3, 6, 0, 13, 24, 12, 3, 5, 8, 1};
@@ -21,7 +21,7 @@ int main()
     out(d, 10);
     return 0;
 }
-void select1(int *a, int n)
+void select1(int *a, int n)         //选择迭代
 {
     for (int i = 0; i < n; ++i)
     {
@@ -36,7 +36,7 @@ void select1(int *a, int n)
         swap(a[i], a[ith]);
     }
 }
-void select2(int *a, int n)
+void select2(int *a, int n)     //选择递归
 {
     if (n < 3)
     {
@@ -56,7 +56,7 @@ void select2(int *a, int n)
         select2(a, n - 1);
     }
 }
-void insert1(int *a, int n)
+void insert1(int *a, int n)         //插入迭代
 {
     if (a[0] > a[1])
         swap(a[0], a[1]);
@@ -73,11 +73,12 @@ void insert1(int *a, int n)
         a[j + 1] = key;
     }
 }
-void insert2(int *a, int n)
+void insert2(int *a, int n)         //插入递归
 {
     int i = n - 1;
-    if(n==0) return;
-    insert2(a,n-1);
+    if (n == 0)
+        return;
+    insert2(a, n - 1);
     while (i >= 1 && a[i] < a[i - 1])
     {
         swap(a[i], a[i - 1]);
@@ -85,7 +86,7 @@ void insert2(int *a, int n)
     }
 }
 
-void out(int a[], int arraysize)
+void out(int a[], int arraysize)        //输出函数
 {
     int i = 0;
     for (; i < arraysize; i++)
