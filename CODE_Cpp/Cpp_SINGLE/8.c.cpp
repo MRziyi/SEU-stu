@@ -11,7 +11,13 @@ int main()
     for (int i = 0; i < 20; i++)
     {
         int first = rand() % 5;
-        printf("%c%s %s %s %s %s %s\n", (char)(*article[first] - 32), article[first] + 1, noun[rand() % 5], verbs[rand() % 5], perpositions[rand() % 5], article[rand() % 5], noun[rand() % 5]);
+        printf("%c%s %s %s %s %s %s\n", (char)(*article[first] - 32), 
+                                        article[first] + 1, 
+                                        noun[rand() % 5], 
+                                        verbs[rand() % 5], 
+                                        perpositions[rand() % 5], 
+                                        article[rand() % 5], 
+                                        noun[rand() % 5]);
     }
     return 0;
 }
