@@ -7,7 +7,7 @@ int main()
     char b[256][30] = {'\0'}; //二维数组用以存放单词
     int num[256] = {0};
     int i = 0, j = -1, k = 0;
-    gets(a);
+    gets_s(a);
     for (; a[i] != '\0' && i < 257; i++)
     {
         while (a[i] == ' ') //处理空格问题
