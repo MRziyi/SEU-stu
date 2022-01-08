@@ -33,9 +33,9 @@ void is(int *a, int n)
     for (int i = 0; i < n; i++)
     {
         int ith = i;
-        for (int j = i+1; j < n; j++)
+        for (int j = i + 1; j < n; j++)
             if (a[ith] > a[j])
                 ith = j;
-        swap(a[i],a[ith]);
+        swap(a[i], a[ith]);
     }
 }
